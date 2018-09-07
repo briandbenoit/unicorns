@@ -12,6 +12,7 @@ A place to keep the place to keep the unicorns
 
 ## to do (hypothetical)
 - [ ] Authenticate via Auth0
+- [ ] Refactor in node and react
 - [ ] Vastly improve form validation
 - [ ] Improve clarity / separation of code
 - [ ] Mass delete unicorns
