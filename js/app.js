@@ -1,5 +1,6 @@
 $(document).ready(function () {
     
+// THE BASICS ===================================================
     //Get handles
     var hideables = $('.hideable'),
         managementBox = $('#managementBox'),
@@ -28,7 +29,7 @@ $(document).ready(function () {
     
     $('#signUpNext').on('click', function(e) {
         e.preventDefault();
-        checkEmail($('#signUpEmail').val(), 'signUp'); 
+        checkEmail($('#signUpEmail').val()); 
     });
     
     $('#signUpFinish').off().on('click', function(e) {
@@ -59,16 +60,6 @@ function prepSession(userId) {
     });
 }
 
-function startSession() {
-    drawLocations();
-    drawUnicorns();
-    updatePopulations();
-    initializeSortables();
-    setGreeting();
-    $('.loadingIndicator').addClass('hidden');
-    $('.fullScreenGate').addClass('hidden');
-}  
-    
 function save() {
     $('.autosaveIndicator').removeClass('faded');
     var settings = {
@@ -113,9 +104,8 @@ function registerUser(email, password, first_name, last_name, unicorn_count) {
     });
 }
     
-
     
-function checkEmail(email, context) {
+function checkEmail(email) {
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -136,23 +126,14 @@ function checkEmail(email, context) {
         $.ajax(settings).done(function (response) {
             var emailExists = response.length !== 0;
             if(emailExists) {
-                if(context == 'signUp') {
-                    $('.resultMessage').text("Sorry, it looks like a user is already registered with that email address");
-                } else if(context == 'login') {
-                    // Check password
-                    checkPassword()
-                }
+                $('.resultMessage').text("Sorry, it looks like a user is already registered with that email address");
             } else {
-                if(context == 'signUp') {
-                    if( $('#signUpPassword').val() !== $('#signUpPasswordConf').val() ) {
-                        $('.resultMessage').text("Passwords do not match :/");
-                    } else {
-                        $('#signUpPage1').addClass('hidden');
-                        $('#signUpPage2').removeClass('hidden');
-                    }
-                } else if(context == 'login') {
-                    // Start session with the user id
-                    $('.resultMessage').text("Incorrect username or password");
+                if( $('#signUpPassword').val() !== $('#signUpPasswordConf').val() ) {
+                    $('.resultMessage').text("Passwords do not match :/");
+                } else {
+                    $('.resultMessage').text("");
+                    $('#signUpPage1').addClass('hidden');
+                    $('#signUpPage2').removeClass('hidden');
                 }
             }
         });
@@ -175,6 +156,7 @@ function checkCredentials(email, password) {
     $.ajax(settings).done(function (response) {
         var passwordCorrect = response.length !== 0;
         if(passwordCorrect) {
+            $('.resultMessage').text("");
             $('.loadingProgress').addClass('fullyLoaded');
             prepSession(response[0]._id);
         } else {
@@ -183,7 +165,17 @@ function checkCredentials(email, password) {
     });
 }
  
-// ==== PAGE SETUP ===============================================
+// ==== SESSION SETUP ===============================================
+function startSession() {
+    drawLocations();
+    drawUnicorns();
+    updatePopulations();
+    initializeSortables();
+    setGreeting();
+    $('.loadingIndicator').addClass('hidden');
+    $('.fullScreenGate').addClass('hidden');
+}      
+
 function initializeSortables() {
     $( ".lineup, .trash" ).sortable({
         connectWith: ".lineup, .trash",
@@ -323,7 +315,7 @@ function evenlyDistributeUnicorns(user) {
     
 /** SET GREETING HEADLINE **/
 function setGreeting() {
-    $('.greeting').html('Welcome ' + sessionUser.first_name + '! You currently have <span class="colorfulCount">' + sessionUser.unicorn_count + '</span> unicorns! <span class="addMore">+ add more</span>');
+    $('.greeting').html('Welcome, ' + sessionUser.first_name + '! You currently have <span class="colorfulCount">' + sessionUser.unicorn_count + '</span> unicorns! <span class="addMore">+ add more</span>');
     startListeners();
 }
     
@@ -395,8 +387,8 @@ function addUnicornsTo(location, amount) {
 /** TRANSFER UNICORNS **/
     function transferUnicorns(from, to, amount) { 
         
-        //First, check if the "from" location has the right amount available
         if(from.population >= amount) {
+            $('.resultMessage').text("");
             to.population += amount;
             from.population -= amount;
             updatePopulations();
