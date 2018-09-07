@@ -1,0 +1,589 @@
+/************************************* Small screens (default) ********************************************/
+
+html { 
+    font-weight: normal;
+    width: 100%;
+    height: 100%;
+    font-size: 62.5% !important; 
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+ 
+.clearfix:after {
+  clear: both;
+}
+ 
+.clearfix {
+  *zoom: 1;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+.fullScreenGate {
+    padding-top: 100px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #BE3E82;
+    z-index: 10000;
+}
+
+.gateLogo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url('/img/edgy-origami-color.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.loginForm {
+    width: 375px;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.loginField {
+    width: 100%;
+    margin-top: 10px;
+    height: 5rem;
+    border-radius: 25px;
+    padding-left: 20px;
+    border: none;
+}
+
+.half {
+    position: relative;
+    float: left;
+    width: calc(50% - 10px);
+    margin-right: 10px;
+}
+
+.loginButton {
+    width: 100%;
+    margin: 0 auto;
+    margin: 20px 0px 10px 0px;
+    height: 5rem;
+    border-radius: 25px;
+    background-color: #41d3bd;
+    border: none;
+    font-size: 24px;
+}
+
+.signUpLink {
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.row {
+    width: 100% !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.rotated {
+    transform: rotate(45deg);
+    transition: transform .250s;
+}
+
+/*** NAVIGATION ***/
+
+.topNav {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid black;
+    background: #41d3bd;
+    padding: 10px 20px;
+    z-index: 100;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+}
+
+.mainLogo {
+    width: 60px;
+    height: 60px;
+    background-image: url('../img/edgy-origami-color.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.mainLogo:hover {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    left: -2.5px;
+    top: -2.5px;
+    cursor: pointer;
+}
+
+.sideMenu {
+    position: fixed;
+    z-index: 10;
+    width: 300px;
+    height: 100%;
+    box-shadow: 3px 0px 3px 3px rgb(60,60,60,0.5);
+    top: 0px;
+    left: 0px;
+    background-color: #C96198;
+    padding-top: 80px;
+    transition: top 250ms;
+}
+
+.sideMenuItem {
+    width: 100%;
+    height: 80px;
+    padding: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sideMenuItem:hover {
+    background-color: #E1A7C6
+}
+
+/*** WELCOME AREA ***/
+
+.mainContent {
+    width: 100%;
+    padding: 95px 20px 75px 20px;
+    background-image: linear-gradient(to bottom right,#4E5383,#9172BF);
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+.greeting {
+    display: inline-block;
+    font-size: 100%;
+    color: black;
+    font-size: 32px;
+    line-height: 38px;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.addMore {
+    display: inline-block;
+    font-size: 16px;
+    color: #FF1658;
+    cursor: pointer;
+}
+
+.colorfulCount {
+    color: #FF1658;
+}
+
+/*** LOCATIONS ***/
+
+.unicornActions {
+    width: 100%;
+    height: 20px;
+}
+
+.addUnicorn {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    line-height: 15px;
+    background-color: #FF1658;
+}
+
+.addUnicorn:hover {
+    cursor: pointer;
+}
+
+.locationsContainer {
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+}
+
+.location {
+    position: relative;
+    float: left;
+    width: calc(100% - 30px);
+    min-height: 120px;
+    min-width: 150px;
+    max-width: 300px;
+    background-color: white;
+    border: 1px solid rgb(60,60,60);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+
+.locationTitle {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.population {
+    position: relative;
+    float: right;
+    height: 70px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.countLabel {
+    float: right;
+    display: inline-block;
+    height: 100%;
+    font-weight: 500;
+    font-size: 48px;
+    margin-right: 20px;
+    color: #FF1658;
+}
+
+.countLabel::after {
+    content: 'x';
+    font-size: 26px;
+}
+
+.locationMenu {
+    float: right;
+    width: 40px;
+    height: 40px;
+    padding-left: 5px;
+    padding-top: 5px;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.lineup {
+    position: relative;
+    float: right;
+    display: inline-block;
+    width: 60px;
+    height: 100%;
+    max-height: 100px;
+    padding: 0px 0px;
+    margin: 0px;
+}
+
+.placeholderUnicorn {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgb(60,60,60);
+    background-color: #EBE5F3;
+}
+
+.placeholderUnicon {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/inactive-gray.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.smallCorn {
+    position: absolute !important;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 1px solid rgb(60,60,60);
+    width: 60px;
+    height: 60px;
+    background-color: #EBE5F3;
+    box-shadow: 2px 2px 2px -2px rgba(100,100,100,0.1);
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+    list-style: none;
+}
+
+.smallCornIcon {
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/inactive-color.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.smallCornIcon:hover  {
+    background-image: url('../img/active-color.png');
+}
+
+.smallCorn:hover {
+    cursor: grab;
+    box-shadow: 3px 3px 2px rgba(0,0,0,0.3);
+}
+
+.placeholderLocation {
+    position: relative;
+    float: left;
+    width: calc(100% - 30px);
+    min-height: 120px;
+    min-width: 150px;
+    max-width: 300px;
+    background-color: rgba(255,255,255,0.1);
+    border: 5px dashed rgba(255,255,255,0.3);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.placeholderLocation:hover {
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.3);
+    border: 5px dashed rgba(255,255,255,0.7);
+}
+
+/*** OVERLAYS ***/
+
+.managementBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.7);
+    z-index: 1000;
+}
+
+.closeTransferBox {
+    position: absolute;
+    width:  36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 36px;
+    top: -5px;
+    right: -5px;
+    background-color: white;
+    color: black;
+    padding: 9px;
+}
+
+.closeTransferBox:hover {
+    cursor: pointer;
+}
+
+.closeIcon {
+    margin-top: -20px;
+    transform: rotate(45deg);
+}
+
+.managementBox form {
+    position: relative;
+    background-color: lightblue;
+    border-radius: 20px;
+    border: 5px solid white;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 50px;
+    font-size: 150%;
+}
+
+.managementBox .transferCountLine {
+    margin-bottom: 20px;
+}
+
+.managementBox .inlineField {
+    width: 5rem;
+    background: rgba(0,0,0,0);
+    border: none;
+    border-bottom: 2px solid deeppink;
+    text-align: center;
+    color: deeppink !important;
+}
+
+.managementBox .transferResults {
+    margin-top: 20px;
+}
+
+.resultMessage {
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    color: rgb(60,60,60);
+}
+
+.managementBox button {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.distributionCounter {
+    width: 100px;
+}
+
+/*** CONTEXTUAL CONTROLS ***/
+
+.contextualControls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.trashWrap {
+    width: 60px;
+    height: 60px;
+    
+}
+
+.trash {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: deeppink;
+    background-image: url('/img/trash.png');
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.autosaveIndicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    z-index: 1000;
+    color: rgba(255,255,255,0.75);
+    opacity: 1.0
+    transition: opacity 500ms;
+}
+
+.autosaveIcon {
+    float: right;
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/dots-06@4x.png');
+    background-size: contain;
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 4000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 4000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 4000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.loadingIndicator {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1rem;
+    
+    z-index: 100000;
+}
+
+.loadingProgress {
+   width: 0%;
+   height: 100%;
+   background-color: #41d3bd; 
+    transition: width 3s;
+}
+
+.fullyLoaded {
+    width: 100%;
+    transition: width 3s;
+}
+
+/*** HELPER STYLES ***/
+
+.hidden {
+    display: none;
+}
+
+.faded {
+    opacity: 0.0;
+    transition: opacity 100ms;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    text-decoration-color: #FF1658;
+}
+
+.raised {
+    top: -100%;
+    transition: top 250ms;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(359deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(359deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(359deg);}
+}
+
+
+/* Medium Screens (iPad in landscape orientation, smaller laptops - 1024px) */
+@media only screen and (min-width: 1024px) { 
+    html { font-size: 120%; } 
+}
+
+
+/* Large screens (larger laptops and desktops - 1186px) */
+@media only screen and (min-width: 1186px) { 
+    html { font-size: 120%; } 
+}
+
+/* Enormous screens (1280px and up) */
+@media only screen and (min-width: 1280px) { 
+  html { font-size: 120%; } 
+}
